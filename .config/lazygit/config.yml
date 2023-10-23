@@ -1,0 +1,9 @@
+os:
+  editPreset: "nvim"
+  editCommand: "nvim --server $NVIM_SERVER"
+  editCommandTemplate: "{{editor}} --remote-send '<C-\\><C-n>:5ToggleTerm<CR>:lua Edit({{filename}}, {{line}})<CR>'"
+git:
+  paging:
+    colorArg: always
+    pager: delta --dark --paging=never
+    useConfig: false
