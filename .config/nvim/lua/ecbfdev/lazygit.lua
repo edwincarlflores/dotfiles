@@ -1,8 +1,10 @@
 local Terminal = require("toggleterm.terminal").Terminal
 
-local lg_cmd = "lazygit -ucf ~/.config/lazygit/config.yml -w $PWD"
+-- local lg_cmd = "lazygit -ucf ~/.config/lazygit/config.yml -w $PWD"
+local lg_cmd = "lazygit -ucf ~/.config/lazygit/config.yml"
 if vim.v.servername ~= nil then
-  lg_cmd = string.format("NVIM_SERVER=%s lazygit -ucf ~/.config/lazygit/config.yml -w $PWD", vim.v.servername)
+  -- lg_cmd = string.format("NVIM_SERVER=%s lazygit -ucf ~/.config/lazygit/config.yml -w $PWD", vim.v.servername)
+  lg_cmd = string.format("NVIM_SERVER=%s lazygit -ucf ~/.config/lazygit/config.yml", vim.v.servername)
 end
 
 local lazygit = Terminal:new({

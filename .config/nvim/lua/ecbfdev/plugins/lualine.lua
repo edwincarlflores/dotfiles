@@ -51,10 +51,11 @@ return {
 
     -- configure lualine with modified theme
     lualine.setup({
-      -- options = {
-      --   -- theme = my_lualine_theme,
-      --   theme = "gruvbox-baby",
-      -- },
+      options = {
+        disabled_filetypes = {
+          "NvimTree",
+        },
+      },
       sections = {
         lualine_c = {
           { "filename", path = 1 },

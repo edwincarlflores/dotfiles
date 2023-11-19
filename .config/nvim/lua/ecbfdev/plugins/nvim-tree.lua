@@ -24,7 +24,7 @@ return {
         update_root = false,
       },
       view = {
-        width = 40,
+        width = 50,
         preserve_window_proportions = true,
         relativenumber = true,
       },

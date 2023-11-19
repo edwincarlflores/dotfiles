@@ -40,3 +40,9 @@ keymap.set(
   "<cmd>:bprevious <bar> bdelete #<CR>",
   { noremap = true, silent = true, desc = "Close current buffer" }
 ) -- Close current buffer
+keymap.set(
+  "n",
+  "<leader>bx",
+  '<cmd>%bdelete|edit #|normal `"<CR>',
+  { noremap = true, silent = true, desc = "Close all other buffers" }
+) -- close all buffers

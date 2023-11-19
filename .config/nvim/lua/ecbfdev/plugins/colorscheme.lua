@@ -1,11 +1,110 @@
 return {
-  --  {
-  --   "sainnhe/gruvbox-material",
-  --   priority = 1000 ,
+  -- {
+  --   "eddyekofo94/gruvbox-flat.nvim",
+  --   priority = 1000,
+  --   enabled = true,
   --   config = function()
-  --     vim.cmd([[colorscheme gruvbox-material]])
+  --     vim.g.gruvbox_flat_style = "hard"
+  --     vim.cmd([[colorscheme gruvbox-flat]])
   --   end,
   -- },
+  {
+    "sainnhe/everforest",
+    priority = 1000,
+    config = function()
+      vim.g.everforest_background = "hard"
+      -- vim.cmd([[colorscheme everforest]])
+    end,
+  },
+  {
+    "sainnhe/gruvbox-material",
+    priority = 1000,
+    config = function()
+      vim.g.gruvbox_material_background = "hard"
+      vim.g.gruvbox_material_foreground = "mix" -- material, mix, original
+      vim.g.gruvbox_material_transparent_background = 1
+      -- vim.g.gruvbox_material_ui_contrast = "high" -- The contrast of line numbers, indent lines, etc.
+      -- vim.g.gruvbox_material_float_style = "dim" -- Background of floating windows
+      -- vim.g.gruvbox_material_statusline_style = "default"
+
+      -- vim.g.gruvbox_material_better_performance = 1
+      -- vim.g.gruvbox_material_colors_override = { bg0 = "#0e1010" } -- #0e1010
+
+      -- vim.cmd([[colorscheme gruvbox-material]])
+    end,
+  },
+  -- {
+  --   "catppuccin/nvim",
+  --   name = "catppuccin",
+  --   priority = 1000,
+  --   config = function()
+  --     require("catppuccin").setup({
+  --       flavour = "mocha", -- latte, frappe, macchiato, mocha
+  --       background = { -- :h background
+  --         light = "latte",
+  --         dark = "mocha",
+  --       },
+  --       integrations = {
+  --         harpoon = true,
+  --         telescope = {
+  --           enabled = true,
+  --           style = "nvchad",
+  --         },
+  --       },
+  --     })
+  --
+  --     vim.cmd.colorscheme("catppuccin")
+  --   end,
+  -- },
+  {
+    "rebelot/kanagawa.nvim",
+    priority = 1000,
+    config = function()
+      require("kanagawa").setup({
+        theme = "wave", -- wave, dragon, lotus
+        background = {
+          dark = "wave",
+          light = "lotus",
+        },
+        colors = {
+          theme = {
+            all = {
+              ui = {
+                bg_gutter = "none",
+              },
+            },
+          },
+        },
+        overrides = function(colors)
+          local theme = colors.theme
+          return {
+            NormalFloat = { bg = "none" },
+            FloatBorder = { bg = "none" },
+            FloatTitle = { bg = "none" },
+
+            -- Save an hlgroup with dark background and dimmed foreground
+            -- so that you can use it where your still want darker windows.
+            -- E.g.: autocmd TermOpen * setlocal winhighlight=Normal:NormalDark
+            NormalDark = { fg = theme.ui.fg_dim, bg = theme.ui.bg_m3 },
+
+            -- Popular plugins that open floats will link to NormalFloat by default;
+            -- set their background accordingly if you wish to keep them dark and borderless
+            LazyNormal = { bg = theme.ui.bg_m3, fg = theme.ui.fg_dim },
+            MasonNormal = { bg = theme.ui.bg_m3, fg = theme.ui.fg_dim },
+          }
+        end,
+      })
+
+      vim.cmd([[colorscheme kanagawa]])
+    end,
+  },
+  {
+    "sainnhe/gruvbox-material",
+    priority = 1000,
+    config = function()
+      -- vim.cmd([[colorscheme gruvbox-material]])
+    end,
+  },
   -- {
   --   "luisiacc/gruvbox-baby",
   --   priority = 1000 ,
@@ -35,7 +134,7 @@ return {
         },
       })
 
-      vim.cmd([[colorscheme gruvbox]])
+      -- vim.cmd([[colorscheme gruvbox]])
     end,
   },
   -- {
