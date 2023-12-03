@@ -55,12 +55,12 @@ return {
         generic_sorter = require("telescope.sorters").get_generic_fuzzy_sorter,
         winblend = 0,
         border = {},
-        -- borderchars = { "─", "│", "─", "│", "╭", "╮", "╯", "╰" },
-        borderchars = {
-          prompt = { "─", " ", " ", " ", "─", "─", " ", " " },
-          results = { " " },
-          preview = { " " },
-        },
+        borderchars = { "─", "│", "─", "│", "╭", "╮", "╯", "╰" },
+        -- borderchars = {
+        --   prompt = { "─", " ", " ", " ", "─", "─", " ", " " },
+        --   results = { " " },
+        --   preview = { " " },
+        -- },
         color_devicons = true,
         set_env = { ["COLORTERM"] = "truecolor" }, -- default = nil,
         file_previewer = require("telescope.previewers").vim_buffer_cat.new,

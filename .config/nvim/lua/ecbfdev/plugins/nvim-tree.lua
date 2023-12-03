@@ -9,8 +9,8 @@ return {
     vim.g.loaded_netrwPlugin = 1
 
     -- change color for arrows in tree to light purple
-    vim.cmd([[ highlight NvimTreeFolderArrowClosed guifg=#d3869b ]])
-    vim.cmd([[ highlight NvimTreeFolderArrowOpen guifg=#d3869b ]])
+    -- vim.cmd([[ highlight NvimTreeFolderArrowClosed guifg=#d3869b ]])
+    -- vim.cmd([[ highlight NvimTreeFolderArrowOpen guifg=#d3869b ]])
 
     -- configure nvim-tree
     nvimtree.setup({
@@ -40,7 +40,8 @@ return {
           show = {
             file = true,
             folder = true,
-            folder_arrow = true,
+            -- folder_arrow = true,
+            folder_arrow = false,
             git = false,
           },
 
