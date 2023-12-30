@@ -51,5 +51,8 @@ keymap.set("n", "<C-d>", "<C-d>zz", { noremap = true, silent = true })
 keymap.set("n", "<C-u>", "<C-u>zz", { noremap = true, silent = true })
 keymap.set("n", "n", "nzz", { noremap = true, silent = true })
 keymap.set("n", "N", "Nzz", { noremap = true, silent = true })
+keymap.set({ "n", "v" }, "<leader><leader>", [["_]], { noremap = true, silent = true }) -- copy to void register, can be used with dd, c, ciw etc.
+keymap.set({ "n", "v" }, "<leader>y", [["+y]], { noremap = true, silent = true })
+keymap.set("n", "<leader>Y", [["+Y]], { noremap = true, silent = true })
 
 keymap.set("n", "<leader>ww", "<cmd>w<CR>", { noremap = true, silent = true, desc = "Write file" }) -- write file
