@@ -76,6 +76,13 @@ return {
     lspconfig["html"].setup({
       capabilities = capabilities,
       on_attach = on_attach,
+      filetypes = { "html", "templ" }, -- test
+    })
+
+    lspconfig.htmx.setup({
+      on_attach = on_attach,
+      capabilities = capabilities,
+      filetypes = { "html", "templ" },
     })
 
     -- configure typescript server with plugin
@@ -252,6 +259,11 @@ return {
       },
     })
 
+    lspconfig["astro"].setup({
+      capabilities = capabilities,
+      on_attach = on_attach,
+    })
+
     lspconfig["terraformls"].setup({
       capabilities = capabilities,
       on_attach = on_attach,
@@ -263,6 +275,11 @@ return {
     })
 
     lspconfig["eslint"].setup({
+      capabilities = capabilities,
+      on_attach = on_attach,
+    })
+
+    lspconfig["clangd"].setup({
       capabilities = capabilities,
       on_attach = on_attach,
     })

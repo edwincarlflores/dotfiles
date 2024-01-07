@@ -56,3 +56,8 @@ keymap.set({ "n", "v" }, "<leader>y", [["+y]], { noremap = true, silent = true }
 keymap.set("n", "<leader>Y", [["+Y]], { noremap = true, silent = true })
 
 keymap.set("n", "<leader>ww", "<cmd>w<CR>", { noremap = true, silent = true, desc = "Write file" }) -- write file
+
+-- Neogen
+keymap.set("n", "<leader>gt", "<cmd>Neogen type<cr>", { silent = true, noremap = true })
+keymap.set("n", "<leader>gf", "<cmd>Neogen func<cr>", { silent = true, noremap = true })
+keymap.set("n", "<leader>gc", "<cmd>Neogen class<cr>", { silent = true, noremap = true })
