@@ -48,3 +48,17 @@ Create symlinks for config files that already exist in `$HOME` directory
 $ cd ~/dotfiles
 $ stow --adopt .
 ```
+
+Copy files from `$HOME` directory
+
+```
+$ cd ~/dotfiles
+$ cp ~/.zshrc .
+```
+
+Copy files from a nested folder in `$HOME` directory
+
+```
+$ cd ~/dotfiles
+$ cp -r ~/.config/nvim .config
+```
