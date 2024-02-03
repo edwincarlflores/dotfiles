@@ -26,7 +26,7 @@ $ cd ~
 $ git clone git@github.com:edwincarlflores/dotfiles.git
 ```
 
-Use GNU stow to create symlinks from the `$HOME` pointing to the config files inside the `dotfiles` directory
+Use GNU stow to create symlinks from the `$HOME` directory pointing to the config files inside the `dotfiles` directory
 
 ```
 $ cd ~/dotfiles
