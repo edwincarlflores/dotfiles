@@ -32,3 +32,19 @@ Use GNU stow to create symlinks from the `$HOME` pointing to the config files in
 $ cd ~/dotfiles
 $ stow .
 ```
+
+## Notable commands
+
+Create symlinks for config files that does not exist in `$HOME` directory
+
+```
+$ cd ~/dotfiles
+$ stow .
+```
+
+Create symlinks for config files that already exist in `$HOME` directory
+
+```
+$ cd ~/dotfiles
+$ stow --adopt .
+```
