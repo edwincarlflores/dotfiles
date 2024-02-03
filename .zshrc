@@ -169,6 +169,6 @@ alias lg="lazygit --use-config-file='$HOME/.config/lazygit/config.yml'"
 
 alias vim="nvim"
 
-alias config='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+# alias config='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 
 alias battery="~/bin/battery Discharging; ~/bin/battery Charging" 
