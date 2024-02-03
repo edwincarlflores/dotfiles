@@ -1,0 +1,29 @@
+[user]
+	name = Edwin Carl Flores
+  email = edwincarlflores@gmail.com
+[url "git@github.com:"]
+  insteadOf = https://github.com/
+
+# Custom configs for delta
+[include]
+    path = /Users/ecbflores/.config/delta/themes.gitconfig
+
+[core]
+    pager = delta
+
+[interactive]
+    diffFilter = delta --color-only
+
+[delta]
+    navigate = true    # use n and N to move between diff sections
+    light = false      # set to true if you're in a terminal w/ a light background color (e.g. the default macOS terminal)
+    # side-by-side = true
+    line-numbers = true
+    syntax-theme = gruvbox-dark
+    # features = gruvmax-fang 
+
+[merge]
+    conflictstyle = diff3
+
+[diff]
+    colorMoved = default
