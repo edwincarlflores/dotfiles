@@ -449,9 +449,9 @@ return {
 
     local ScrollBar = {
       static = {
-        sbar = { "▁", "▂", "▃", "▄", "▅", "▆", "▇", "█" },
+        -- sbar = { "▁", "▂", "▃", "▄", "▅", "▆", "▇", "█" },
         -- Another variant, because the more choice the better.
-        -- sbar = { '🭶', '🭷', '🭸', '🭹', '🭺', '🭻' }
+        sbar = { "🭶", "🭷", "🭸", "🭹", "🭺", "🭻" },
       },
       provider = function(self)
         local curr_line = vim.api.nvim_win_get_cursor(0)[1]
@@ -470,27 +470,45 @@ return {
       end,
     }
 
+    local DefaultStatusLine = {
+      ViMode,
+      FileNameBlock,
+      -- FileType,
+      FileSize,
+      -- FileLastModified,
+      Git,
+      Align,
+      LSPActive,
+      Linters,
+      Formatters,
+      Diagnostics,
+      -- FileFormat,
+      -- FileEncoding,
+      -- IndentSizes,
+      Ruler,
+      ScrollBar,
+    }
+
+    local HiddenStatusLine = {
+      condition = function()
+        return conditions.buffer_matches({
+          buftype = { "nofile", "prompt", "help", "quickfix" },
+          filetype = { "^git.*", "fugitive", "NvimTree" },
+        })
+      end,
+    }
+
+    local StatusLines = {
+      -- the first statusline with no condition, or which condition returns true is used.
+      -- think of it as a switch case with breaks to stop fallthrough.
+      fallthrough = false,
+
+      HiddenStatusLine,
+      DefaultStatusLine,
+    }
+
     heirline.setup({
-      statusline = {
-        ViMode,
-        -- Git,
-        FileNameBlock,
-        -- FileType,
-        FileSize,
-        -- FileLastModified,
-        Git,
-        Align,
-        LSPActive,
-        Linters,
-        Formatters,
-        Diagnostics,
-        -- FileFormat,
-        -- FileEncoding,
-        -- IndentSizes,
-        Ruler,
-        ScrollBar,
-        -- Git,
-      },
+      statusline = StatusLines,
     })
   end,
 }
