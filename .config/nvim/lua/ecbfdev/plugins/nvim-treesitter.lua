@@ -43,6 +43,13 @@ return {
           "dockerfile",
           "gitignore",
           "query",
+          "sql",
+          "astro",
+          "vue",
+          "c",
+          "gomod",
+          "gosum",
+          "jsdoc",
         },
         incremental_selection = {
           enable = true,
