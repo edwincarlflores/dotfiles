@@ -1,0 +1,26 @@
+# Starship configuration file
+
+palette = 'custom'
+
+[palettes.custom]
+goblue = '#62d4e1'
+# goblue = '#8acbdb'
+
+[character] # The name of the module we are configuring is 'character'
+success_symbol = '[➜](bold green)'
+error_symbol = '[➜](bold red)'
+
+[docker_context]
+disabled = true
+
+[golang]
+format = '[$symbol($version )](bold goblue)'
+
+[nodejs]
+format = '[$symbol($version )]($style)'
+
+[php]
+format = '[$symbol($version )]($style)'
+
+[git_branch]
+format = '[$symbol$branch(:$remote_branch)]($style) '
