@@ -50,6 +50,7 @@ return {
           "gomod",
           "gosum",
           "jsdoc",
+          "templ",
         },
         incremental_selection = {
           enable = true,
