@@ -118,6 +118,7 @@ source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
+eval "$(starship init zsh)"
 
 killport () {
   echo killing port $1 with PID $(sudo lsof -t -i:$1);

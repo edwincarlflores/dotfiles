@@ -25,7 +25,8 @@ return {
       },
       window = {
         -- position = "float",
-        position = "right",
+        -- position = "right",
+        position = "left",
         width = 50,
       },
       close_if_last_window = true,
