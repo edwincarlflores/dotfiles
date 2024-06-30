@@ -61,3 +61,25 @@ keymap.set("n", "<leader>ww", "<cmd>w<CR>", { noremap = true, silent = true, des
 keymap.set("n", "<leader>gt", "<cmd>Neogen type<cr>", { silent = true, noremap = true })
 keymap.set("n", "<leader>gf", "<cmd>Neogen func<cr>", { silent = true, noremap = true })
 keymap.set("n", "<leader>gc", "<cmd>Neogen class<cr>", { silent = true, noremap = true })
+
+-- Resize window
+keymap.set(
+  "n",
+  "<leader>rf",
+  "<cmd>resize 50<cr>",
+  { silent = true, noremap = true, desc = "Resize window to full screen" }
+)
+
+keymap.set(
+  "n",
+  "<leader>rr",
+  "<cmd>resize 24<cr>",
+  { silent = true, noremap = true, desc = "Resize window to half the screen" }
+)
+
+keymap.set(
+  "n",
+  "<leader>re",
+  "<cmd>resize 12<cr>",
+  { silent = true, noremap = true, desc = "Resize window to less than half the screen" }
+)
