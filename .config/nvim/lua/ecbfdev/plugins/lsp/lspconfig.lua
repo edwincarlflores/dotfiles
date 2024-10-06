@@ -93,6 +93,8 @@ return {
     lspconfig["tsserver"].setup({
       capabilities = capabilities,
       on_attach = on_attach,
+      root_dir = util.root_pattern("package.json"),
+      single_file_support = false,
     })
 
     -- configure go lsp
@@ -286,6 +288,12 @@ return {
     lspconfig["clangd"].setup({
       capabilities = capabilities,
       on_attach = on_attach,
+    })
+
+    lspconfig["denols"].setup({
+      capabilities = capabilities,
+      on_attach = on_attach,
+      root_dir = util.root_pattern("deno.json", "deno.jsonc"),
     })
   end,
 }
