@@ -27,7 +27,8 @@ return {
         -- position = "float",
         -- position = "right",
         position = "left",
-        width = 50,
+        -- width = 50,
+        width = 45,
       },
       close_if_last_window = true,
       filesystem = {

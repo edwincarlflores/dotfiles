@@ -244,7 +244,8 @@ return {
       },
       provider = function()
         local names = {}
-        for _, server in pairs(vim.lsp.get_active_clients()) do
+        -- for _, server in pairs(vim.lsp.get_active_clients()) do
+        for _, server in pairs(vim.lsp.get_clients()) do
           table.insert(names, server.name)
         end
 

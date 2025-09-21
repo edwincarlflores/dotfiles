@@ -13,7 +13,7 @@ vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({ { import = "ecbfdev.plugins" }, { import = "ecbfdev.plugins.lsp" } }, {
   install = {
-    colorscheme = { "nightfly" },
+    -- colorscheme = { "nightfly" },
   },
   checker = {
     enabled = true,

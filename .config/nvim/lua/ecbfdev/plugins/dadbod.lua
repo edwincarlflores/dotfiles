@@ -17,6 +17,6 @@ return {
   config = function()
     -- set keymaps
     local keymap = vim.keymap -- for conciseness
-    keymap.set("n", "<leader>db", "<cmd>DBUIToggle<cr>", { desc = "Open/close DB UI" })
+    -- keymap.set("n", "<leader>db", "<cmd>DBUIToggle<cr>", { desc = "Open/close DB UI" })
   end,
 }

@@ -15,8 +15,18 @@ return {
     local keymap = vim.keymap -- for conciseness
 
     local opts = { noremap = true, silent = true }
+    local lsp_servers_attached = {}
     local on_attach = function(client, bufnr)
       opts.buffer = bufnr
+      local client_buf_key = client.name .. bufnr
+
+      if lsp_servers_attached[client_buf_key] then
+        -- Skip attachment if already done
+        return
+      end
+
+      -- Mark this client as attached to this buffer
+      lsp_servers_attached[client_buf_key] = true
 
       -- set keybinds
       opts.desc = "Show LSP references"
@@ -49,6 +59,7 @@ return {
 
       opts.desc = "Show line diagnostics"
       keymap.set("n", "<leader>d", vim.diagnostic.open_float, opts) -- show diagnostics for line
+      -- keymap.set("n", "<leader>d", "<cmd>lua vim.diagnostic.open_float()<CR>", opts) -- show diagnostics for line
 
       opts.desc = "Go to previous diagnostic"
       keymap.set("n", "[d", vim.diagnostic.goto_prev, opts) -- jump to previous diagnostic in buffer
@@ -90,7 +101,13 @@ return {
     })
 
     -- configure typescript server with plugin
-    lspconfig["tsserver"].setup({
+    -- lspconfig["tsserver"].setup({
+    --   capabilities = capabilities,
+    --   on_attach = on_attach,
+    --   root_dir = util.root_pattern("package.json"),
+    --   single_file_support = false,
+    -- })
+    lspconfig["ts_ls"].setup({
       capabilities = capabilities,
       on_attach = on_attach,
       root_dir = util.root_pattern("package.json"),
@@ -214,11 +231,11 @@ return {
     })
 
     -- configure emmet language server
-    lspconfig["emmet_ls"].setup({
-      capabilities = capabilities,
-      on_attach = on_attach,
-      filetypes = { "html", "typescriptreact", "javascriptreact", "css", "sass", "scss", "less", "svelte" },
-    })
+    -- lspconfig["emmet_ls"].setup({
+    --   capabilities = capabilities,
+    --   on_attach = on_attach,
+    --   filetypes = { "html", "typescriptreact", "javascriptreact", "css", "sass", "scss", "less", "svelte" },
+    -- })
 
     -- configure python server
     lspconfig["pyright"].setup({
@@ -290,10 +307,11 @@ return {
       on_attach = on_attach,
     })
 
-    lspconfig["denols"].setup({
-      capabilities = capabilities,
-      on_attach = on_attach,
-      root_dir = util.root_pattern("deno.json", "deno.jsonc"),
-    })
+    -- lspconfig["denols"].setup({
+    --   capabilities = capabilities,
+    --   on_attach = on_attach,
+    --   autostart = false, -- Prevents automatic startup
+    --   root_dir = util.root_pattern("deno.json", "deno.jsonc"),
+    -- })
   end,
 }
